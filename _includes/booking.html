@@ -1,0 +1,47 @@
+<!-- Booking Section -->
+<section id="booking" class="content-section text-center">
+  <div class="booking-section">
+    <div class="container">
+      <div class="col-lg-8 col-lg-offset-2">
+        <h2>Buchung</h2>
+        <p>Haben Sie eine Veranstaltung die noch die richtige Musik braucht? Einfach über das untere Formular kontaktieren.</p>
+        <form name="booking" id="id-booking" class="form-horizontal" method="POST">
+          <div class="form-group">
+            <label for="inputEmail4" class="col-sm-2 control-label">E-Mail</label>
+            <div class="col-sm-4">
+              <input type="email" class="form-control" name="_replyto" id="inputEmail4" placeholder="E-Mail">
+              <input id="id-subject" type="hidden" name="_subject" value="Anfrage Buchung">
+              <input type="hidden" name="_next" value="{{% siteurl %}}/thankyou">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputDate3" class="col-sm-2 control-label">Datum</label>
+            <div class="col-sm-4">
+              <input type="date" class="form-control" id="id-date" placeholder="Datum">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputText" class="col-sm-2 control-label">Text</label>
+            <div class="col-sm-10">
+              <textarea class="form-control" name="content" rows="10"></textarea>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <input type="text" name="_gotcha" style="display:none" />
+              <button type="submit" class="btn btn-default btn-lg" onclick="myFunction()">Senden</button>
+            </div>
+          </div>
+        </form>
+        <script>
+          var booking = document.getElementById('id-booking');
+          booking.setAttribute('action', 'https:' + '//formspree.io/' + 'djmischanistl' + '@' + 'web' + '.' + 'de');
+
+          function myFunction() {
+            document.getElementById("id-subject").value = document.getElementById("id-subject").value + ' ' + document.getElementById('id-date').value;
+          }
+        </script>
+      </div>
+    </div>
+  </div>
+</section>

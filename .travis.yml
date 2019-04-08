@@ -1,0 +1,10 @@
+language: ruby
+
+services:
+  - docker
+
+before_install:
+  - docker build -t djmischanistl -f Dockerfile .
+
+#script:
+#  - docker run --hostname localhost djmischanistl bash -c "ps aux | grep nginx"

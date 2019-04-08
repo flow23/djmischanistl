@@ -1,0 +1,31 @@
+version: "2"
+
+services:
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    container_name: nginx-proxy
+    ports:
+      - "80:80"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+    environment:
+      - DEFAULT_HOST=159.89.2.44
+
+  djmischanistl:
+    image: flow1985/djmischanistl
+    container_name: djmischanistl
+    environment:
+      - VIRTUAL_HOST=*.djmischanistl.de,djmischanistl.de
+
+  fallback:
+    image: flow1985/fgallery
+    container_name: fgallery
+#    ports:
+#      - "80:80"
+    environment:
+      - VIRTUAL_HOST=159.89.2.44
+
+networks:
+  default:
+    external:
+      name: nginx-proxy
