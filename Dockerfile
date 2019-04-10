@@ -1,6 +1,7 @@
 FROM ruby:2.5 as build
 
-ENV JEKYLL_ENV production
+# ENV JEKYLL_ENV production
+
 WORKDIR /usr/src/app
 
 COPY . /usr/src/app
