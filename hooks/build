@@ -1,0 +1,2 @@
+#!/bin/bash
+docker build -t djmischanistl:development --build-arg JEKYLLGRAM_TOKEN=$JEKYLLGRAM_TOKEN .
