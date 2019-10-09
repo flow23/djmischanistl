@@ -13,6 +13,4 @@ RUN bundle install && \
 
 FROM nginx:alpine
 
-RUN apk add --no-cache bash
-
 COPY --from=build /usr/src/app/public/ /usr/share/nginx/html/
